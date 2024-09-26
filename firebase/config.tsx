@@ -12,15 +12,14 @@ interface FirebaseContextType {
 }
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCGl7iRYLvs4Ejzlii13YdwqiYDf2z-gfc",
-  authDomain: "shopkaro-734e4.firebaseapp.com",
-  projectId: "shopkaro-734e4",
-  storageBucket: "shopkaro-734e4.appspot.com",
-  messagingSenderId: "911474669913",
-  appId: "1:911474669913:web:9ff2864ce9a09334e0f448",
-  measurementId: "G-W8T02DBQNQ"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGE_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
-
 // Create context with the correct type
 const FireBaseContext = createContext<FirebaseContextType | null>(null);
 
