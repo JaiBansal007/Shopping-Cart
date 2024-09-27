@@ -39,7 +39,9 @@ export default function SignUp(){
           id: res.user.uid,
           orders: [],
           complaint: [],
-          balance: 0,
+          balance: 10000,
+          quantity: 0,
+          purchasedquantity: 0,
         });
 
         await setDoc(doc(db, "post", res.user.uid), {
@@ -69,7 +71,9 @@ export default function SignUp(){
           id: userId,
           orders: [],
           complaint: [],
-          balance: 0,
+          balance: 1000,
+          quantity: 0,
+          purchasedquantity: 0
         });
   
         await setDoc(doc(db, "post", userId), {
@@ -78,7 +82,7 @@ export default function SignUp(){
       }
   
       toast.success("Successfully Logged in");
-      router.push("/shopping");
+      router.push("/profile");
     } catch (error) {
       toast.error("Login Failed");
       console.log(error);

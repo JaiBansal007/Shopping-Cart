@@ -1,9 +1,12 @@
-import Image from "next/image";
-import FrontPage from "@/Components/FrontPage"
-export default function Home() {
-  return (
-    <>
-      <FrontPage/>
-    </>
-  );
+import FrontPage from "@/Components/FrontPage";
+import NavBar from "@/Components/NavBar";
+import { Toaster } from "react-hot-toast";
+export default function Home(){
+    return (
+        <div>
+            <NavBar />
+            <FrontPage />
+            <Toaster />
+        </div>
+    );
 }

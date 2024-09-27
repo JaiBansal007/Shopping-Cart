@@ -20,31 +20,12 @@ export default async function Home() {
         router.push("/login");
       }
     });
-    getDocs(collection(db, "products")).then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        setProduct((prev) => [...prev, doc.data()]);
-      });
-    });
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100">
       <NavBar />
-      <div className="container mx-auto py-8">
-
-
-        {/* Iterate through the products array and render each Cart */}
-        <div className="flex flex-wrap justify-center gap-10">
-          {products.map((product:any) => (
-            <Cart
-              key={product.id}
-              title={product.title}
-              rating={product.rating.rate}
-              src={product.image}
-            />
-          ))}
-        </div>
-      </div>
+      <Cart />
     </div>
   );
 }
